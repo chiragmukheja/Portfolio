@@ -1,29 +1,17 @@
+import { BookOpen } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
-const skills = [
-  { name: "Node.js", logo: "/icons/nodejs.svg", size: "wide" },
-  { name: "MongoDB", logo: "/icons/mongodb.svg", size: "tall" },
-  { name: "React", logo: "/icons/react.svg", size: "square" },
-  { name: "n8n", logo: "/icons/n8n.svg", size: "wide" },
-  { name: "Tailwind", logo: "/icons/tailwind.svg", size: "square" },
-  { name: "Express", logo: "/icons/express.svg", size: "wide" },
-  { name: "JavaScript", logo: "/icons/javascript.svg", size: "square" },
-  { name: "Figma", logo: "/icons/figma.svg", size: "tall" },
-  { name: "GitHub", logo: "/icons/github.svg", size: "square" },
-  { name: "Prisma", logo: "/icons/prisma.svg", size: "tall" },
-  { name: "HTML", logo: "/icons/html.svg", size: "square" },
-  { name: "CSS", logo: "/icons/css.svg", size: "square" },
-  { name: "Git", logo: "/icons/git.svg", size: "wide" },
-  { name: "Photoshop", logo: "/icons/photoshop.svg", size: "square" },
-
-];
-
+// Type for tileSizeClasses
 const tileSizeClasses = {
   large: "col-span-2 row-span-2",
   wide: "col-span-2 row-span-1",
   tall: "col-span-1 row-span-2",
   square: "col-span-1 row-span-1",
-};
+} as const;
 
+type TileSize = keyof typeof tileSizeClasses;
+
+// Type for iconSizes
 const iconSizes = {
   "Node.js": "w-[100%] h-[180%]",
   "MongoDB": "w-[100%] h-[100%]",
@@ -38,7 +26,33 @@ const iconSizes = {
   "HTML": "w-[80%] h-[80%]",
   "CSS": "w-[80%] h-[80%]",
   "Git": "w-[65%] h-[140%]",
-};
+  "Photoshop": "w-[80%] h-[80%]",
+} as const;
+
+type SkillName = keyof typeof iconSizes;
+
+interface Skill {
+  name: SkillName;
+  logo: string;
+  size: TileSize;
+}
+
+const skills: Skill[] = [
+  { name: "Node.js", logo: "/icons/nodejs.svg", size: "wide" },
+  { name: "MongoDB", logo: "/icons/mongodb.svg", size: "tall" },
+  { name: "React", logo: "/icons/react.svg", size: "square" },
+  { name: "n8n", logo: "/icons/n8n.svg", size: "wide" },
+  { name: "Tailwind", logo: "/icons/tailwind.svg", size: "square" },
+  { name: "Express", logo: "/icons/express.svg", size: "wide" },
+  { name: "JavaScript", logo: "/icons/javascript.svg", size: "square" },
+  { name: "Figma", logo: "/icons/figma.svg", size: "tall" },
+  { name: "GitHub", logo: "/icons/github.svg", size: "square" },
+  { name: "Prisma", logo: "/icons/prisma.svg", size: "tall" },
+  { name: "HTML", logo: "/icons/html.svg", size: "square" },
+  { name: "CSS", logo: "/icons/css.svg", size: "square" },
+  { name: "Git", logo: "/icons/git.svg", size: "wide" },
+  { name: "Photoshop", logo: "/icons/photoshop.svg", size: "square" },
+];
 
 const Skills = () => {
   return (

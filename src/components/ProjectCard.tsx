@@ -3,7 +3,7 @@ type Props = {
   description: string;
   image: string;
   source: string;
-  demo: string;
+  // demo: string;
 };
 
 const ProjectCard = ({ title, description, image, source, demo }: Props) => {
