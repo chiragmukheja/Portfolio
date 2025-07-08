@@ -1,5 +1,3 @@
-import { BookOpen } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 
 // Type for tileSizeClasses
 const tileSizeClasses = {
