@@ -33,7 +33,7 @@ const RightPanel = ({ activeTab, setActiveTab }: RightPanelProps) => {
   return (
     <div className="w-full max-w-full h-full flex-1 bg-[#3C3B3B] border border-[#787878] rounded-2xl shadow-xl flex flex-col overflow-hidden">
       {/* Top Nav */}
-      <div className="self-end w-[45%] h-[60px] bg-[#504F4F] border border-[#726F6F] rounded-tr-2xl rounded-bl-2xl shadow-md flex items-center justify-end gap-6 px-6">
+      <div className="self-end w-full max-w-[520px] h-[60px] bg-[#504F4F] border border-[#726F6F] rounded-tr-2xl rounded-bl-2xl shadow-md flex items-center justify-end gap-6 px-6">
         {tabs.map((tab) => (
           <button
             key={tab}
