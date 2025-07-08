@@ -6,7 +6,7 @@ type Props = {
   // demo: string;
 };
 
-const ProjectCard = ({ title, description, image, source, demo }: Props) => {
+const ProjectCard = ({ title, description, image, source }: Props) => {
   return (
     <div className="bg-[#464545] rounded-xl p-4 shadow-inner-drop flex flex-col justify-between h-full">
       {/* Image */}
