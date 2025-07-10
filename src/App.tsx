@@ -7,7 +7,7 @@ export default function App() {
   const isContact = activeTab === "Contact";
 
   return (
-    <div className="min-h-screen w-full bg-[#181818] flex items-center justify-center px-4 py-6 sm:py-10 lg:py-12">
+    <div className="min-h-screen w-full bg-[#181818] flex items-center justify-center px-4 py-6 sm:py-10 lg:py-12 overflow-x-hidden">
       <div
         className={`flex flex-col lg:flex-row gap-6 w-full max-w-[1600px] min-h-[90vh] transition-all duration-500 ease-in-out`}
       >

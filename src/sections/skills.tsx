@@ -1,3 +1,4 @@
+// src/sections/Skills.tsx
 
 // Type for tileSizeClasses
 const tileSizeClasses = {
@@ -54,7 +55,7 @@ const skills: Skill[] = [
 
 const Skills = () => {
   return (
-    <div className="text-white h-full flex flex-col ">
+    <div className="text-white h-full flex flex-col">
       {/* Section Heading */}
       <div className="pb-6 px-8">
         <h2 className="text-3xl font-bold">Skills</h2>
@@ -64,7 +65,7 @@ const Skills = () => {
       {/* Adaptive Grid Container */}
       <div className="px-8 pb-8 flex-1">
         <div
-          className="grid gap-4 h-full "
+          className="grid gap-4 h-full"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(7, 1fr)",
@@ -80,6 +81,8 @@ const Skills = () => {
               <img
                 src={skill.logo}
                 alt={skill.name}
+                loading="lazy"
+                decoding="async"
                 className={`object-contain ${iconSizes[skill.name] || "w-[60%] h-[60%]"}`}
               />
             </div>
